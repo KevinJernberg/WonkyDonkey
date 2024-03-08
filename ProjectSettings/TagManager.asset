@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Cactus
+  - Pipe
   layers:
   - Default
   - TransparentFX
