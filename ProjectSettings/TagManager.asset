@@ -12,6 +12,8 @@ TagManager:
   - Knob
   - File
   - sys32
+  - CactusDespawner
+  - Coin
   layers:
   - Default
   - TransparentFX

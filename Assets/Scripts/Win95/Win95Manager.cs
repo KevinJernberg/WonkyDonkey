@@ -5,6 +5,7 @@ using UnityEngine;
 public class Win95Manager : MonoBehaviour
 {
     public static Win95Manager Instance;
+    public GameObject trashGame;
 
     public int correct;
     
@@ -28,11 +29,12 @@ public class Win95Manager : MonoBehaviour
             if (correct >= 20)
             {
                 transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();
+                trashGame.SetActive(true);
             }
         }
         else
         {
-            Debug.Log("System32 Deleted");
+            Application.Quit();
         }   
     }
 }

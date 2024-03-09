@@ -5,6 +5,7 @@ using UnityEngine;
 public class CogManager : MonoBehaviour
 {
     public static CogManager Instance;
+    public GameObject trashGame;
 
     public int correct;
     
@@ -26,6 +27,7 @@ public class CogManager : MonoBehaviour
         if (correct >= 4)
         {
             transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();
+            trashGame.SetActive(true);
         }
     }
 }
