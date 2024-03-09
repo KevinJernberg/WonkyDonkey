@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - Cactus
   - Pipe
+  - Line
+  - Circuit
+  - Knob
+  - File
+  - sys32
   layers:
   - Default
   - TransparentFX
@@ -41,6 +46,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1667095819
+    locked: 0
+  - name: Cogs
+    uniqueID: 4023555695
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3979126147
     locked: 0

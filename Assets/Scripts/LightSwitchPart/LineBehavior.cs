@@ -16,6 +16,9 @@ public class LineBehavior : MonoBehaviour
     [HideInInspector] public PolygonCollider2D Collider;
 
     private bool lineComplete;
+    public bool lineCorrect;
+
+    private CircuitColor lineColor;
     
 
     private Vector2 cent;
@@ -33,8 +36,17 @@ public class LineBehavior : MonoBehaviour
         
         LineRenderer.SetPosition(0, startGameObject.transform.position);
         LineRenderer.SetPosition(1, endGameObject.transform.position);
-        
-        
+
+        if (startGameObject.lineColor == endGameObject.lineColor)
+        {
+            lineCorrect = true;
+        }
+        else
+        {
+            lineCorrect = false;
+        }
+        LineManager.Instance.lines.Add(this);
+        LineManager.Instance.CheckForDone();
     }
 
     public GameObject GetAttachedGameObjects()
@@ -49,6 +61,8 @@ public class LineBehavior : MonoBehaviour
         
         startGameObject.currentLine = null;
         endGameObject.currentLine = null;
+        
+        LineManager.Instance.lines.Remove(this);
         
         Destroy(this.gameObject);
     }

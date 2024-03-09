@@ -14,6 +14,8 @@ public class DragLines : MonoBehaviour
     public LineBehavior currentLine;
     private static GameObject asterisk;
 
+    [SerializeField] public CircuitColor lineColor;
+
     public bool isLined;
     
     private void OnMouseDown()
@@ -22,12 +24,12 @@ public class DragLines : MonoBehaviour
         {
             if (LineManager.Instance.beginning == null)
             {
+                if (LineManager.Instance.beginning == this) return;
                 if (asterisk != null)
                     RemoveAsterisk();
                 asterisk = Instantiate(asteriskPrefab, transform);
                 LineManager.Instance.beginning = this;
                 LineManager.Instance.StartLine();
-                isLined = true;
             }
             else
             {
@@ -47,6 +49,7 @@ public class DragLines : MonoBehaviour
             if (currentLine == null) return;
             currentLine.RemoveLine();
             currentLine = null;
+            LineManager.Instance.CheckForDone();
         }
     }
 

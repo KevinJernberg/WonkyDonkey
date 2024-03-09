@@ -12,9 +12,14 @@ public class LineManager : MonoBehaviour
     public DragLines end;
 
     [SerializeField] private GameObject linePrefab;
+    [SerializeField] private GameObject cogsSection;
     [SerializeField] private LineBehavior line;
 
     private const int LINEVERTECIES = 2;
+
+    private int correctAmount = 0;
+
+    public List<LineBehavior> lines;
 
 
     private void Awake()
@@ -59,4 +64,32 @@ public class LineManager : MonoBehaviour
         line.normalColor = beginning.normalColor;
         line.highLightedColor = beginning.highLightedColor;
     }
+
+    public void CheckForDone()
+    {
+        int amountCorrect = 0;
+        foreach (var currentLine in lines)
+        {
+            if (currentLine.lineCorrect)
+            {
+                amountCorrect++;
+            }
+            else
+            {
+                amountCorrect--;
+            }
+        }
+        Debug.Log(amountCorrect);
+
+        if (amountCorrect >= 3)
+        {
+            transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();
+            cogsSection.SetActive(true);
+            foreach (var currentLine in lines)
+            {
+                Destroy(currentLine.gameObject);
+            }
+        }
+    }
+
 }
