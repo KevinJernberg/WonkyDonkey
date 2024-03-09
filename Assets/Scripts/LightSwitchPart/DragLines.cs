@@ -1,65 +1,78 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DragLines : MonoBehaviour
 {
-    [SerializeField] private List<LineBehavior> lines;
     [SerializeField] private GameObject linePrefab;
+    [SerializeField] private GameObject asteriskPrefab;
     
-    [SerializeField] private Color normalColor = Color.red;
-    [SerializeField] private Color highLightedColor = Color.white;
+    [SerializeField] public Color normalColor = Color.red;
+    [SerializeField] public Color highLightedColor = Color.white;
     
-    private LineBehavior _currentLine;
-        
-    private const int LINEVERTECIES = 2;
-    
+    public LineBehavior currentLine;
+    private static GameObject asterisk;
+
+    public bool isLined;
     
     private void OnMouseDown()
     {
-        var newLine = Instantiate(linePrefab, transform);
-        _currentLine = newLine.GetComponent<LineBehavior>();
-        _currentLine.normalColor = normalColor;
-        _currentLine.highLightedColor = highLightedColor;
-        _currentLine.SetStartColor();
-        _currentLine.LineRenderer.SetPosition(0, transform.position);
-        _currentLine.LineRenderer.positionCount = LINEVERTECIES;
-
-    }
-
-    private void OnMouseDrag()
-    {
-        _currentLine.LineRenderer.SetPosition(LINEVERTECIES - 1, MouseWorldPosition());
-    }
-
-    private void OnMouseUp()
-    {
-        Vector3 rayOrigin = Camera.main.transform.position;
-        Vector3 rayDirection =  Camera.main.transform.position - Camera.main.ScreenToWorldPoint(transform.position);
-
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection);
-        
-        if (hit.transform.CompareTag("Circuit"))
+        if (!isLined)
         {
-            _currentLine.isSet = true;
-            AddLine(hit.transform.gameObject);
+            if (LineManager.Instance.beginning == null)
+            {
+                if (asterisk != null)
+                    RemoveAsterisk();
+                asterisk = Instantiate(asteriskPrefab, transform);
+                LineManager.Instance.beginning = this;
+                LineManager.Instance.StartLine();
+                isLined = true;
+            }
+            else
+            {
+                LineManager.Instance.end = this;
+                LineManager.Instance.DrawLine();
+            }
         }
         else
         {
-            Destroy(_currentLine.gameObject);
+            isLined = false;
+            if (LineManager.Instance.beginning == this)
+            {
+                if (asterisk != null)
+                    RemoveAsterisk();
+            }
+            LineManager.Instance.beginning = null;
+            if (currentLine == null) return;
+            currentLine.RemoveLine();
+            currentLine = null;
         }
     }
-    
-    private Vector3 MouseWorldPosition()
+
+    private void OnMouseEnter()
     {
-        Vector3 mouseScreenPos = Input.mousePosition;
-        mouseScreenPos.z = Camera.main.WorldToScreenPoint(transform.position).z;
-        return Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        if (currentLine == null) return;
+        currentLine.LineRenderer.startColor = currentLine.startGameObject.highLightedColor;
+        currentLine.LineRenderer.endColor = currentLine.startGameObject.highLightedColor;
     }
-    
-    private void AddLine(GameObject attachedObject)
+
+    private void OnMouseExit()
     {
-        _currentLine.GetAttachedGameObject();
-        lines.Add(_currentLine);
+        if (currentLine == null) return;
+        currentLine.LineRenderer.startColor = currentLine.startGameObject.normalColor;
+        currentLine.LineRenderer.endColor = currentLine.startGameObject.normalColor;
+    }
+
+
+    public void AddLine(LineBehavior attachedObject)
+    {
+        currentLine = attachedObject;
+    }
+
+    public void RemoveAsterisk()
+    {
+        Destroy(asterisk);
+        asterisk = null;
     }
 }
