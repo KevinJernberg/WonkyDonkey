@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveX = Input.GetAxis("Horizontal") * moveSpeed;
+       // moveX = Input.GetAxis("Horizontal") * moveSpeed;
+       float pos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+       transform.position = new Vector3(pos, transform.position.y, transform.position.z);
     }
 
     private void FixedUpdate()

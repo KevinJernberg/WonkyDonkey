@@ -72,16 +72,16 @@ MonoBehaviour:
   active: 1
   scanLineJitter:
     m_OverrideState: 1
-    m_Value: 0.203
+    m_Value: 0.031
   verticalJump:
     m_OverrideState: 1
-    m_Value: 0.157
+    m_Value: 0.042
   horizontalShake:
     m_OverrideState: 1
-    m_Value: 0.326
+    m_Value: 0.031
   colorDrift:
     m_OverrideState: 1
-    m_Value: 0.311
+    m_Value: 0.02
 --- !u!114 &-7011558710299706105
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d536c364ebc24dd6b769ef6affde936a, type: 3}
   m_Name: DigitalGlitchVolume
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.28
