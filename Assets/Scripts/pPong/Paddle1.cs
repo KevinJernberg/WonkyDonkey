@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,15 +20,11 @@ public class Paddle1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayer)
-        {
-            movement = Input.GetAxisRaw("Vertical");
-        }
-        else
-        {
-            movement = Input.GetAxisRaw("Vertical2");
-        }
+        float pos = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
 
-        rb.velocity = new Vector2(rb.velocity.x, movement * speed);
+
+        pos = Mathf.Clamp(pos, -3.7f, 3.7f);
+
+        transform.position = new Vector3(transform.position.x, pos, transform.position.z);
     }
 }
