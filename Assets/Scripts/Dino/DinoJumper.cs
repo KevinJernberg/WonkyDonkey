@@ -62,6 +62,7 @@ public class DinoJumper : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
+            SoundManager.Instance.DinoJumpAction?.Invoke();
             gravToLeft = !gravToLeft;
             Physics2D.gravity = new Vector2(gravToLeft ? 3 : -3, 0);
             spriteRenderer.flipY = !spriteRenderer.flipY;
@@ -79,6 +80,7 @@ public class DinoJumper : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Coin"))
         {
+            SoundManager.Instance.DinoCoinAction?.Invoke();
             DinoManager.Instance.AddCoin(other.gameObject);
         }
     }

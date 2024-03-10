@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
     public List<EventReference> CoockieLevel = new List<EventReference>();
     
     //[Header("DinoJump")]
-    public List<EventReference> DinoJump = new List<EventReference>();
+    // public List<EventReference> DinoJump = new List<EventReference>();
     
     //[Header("Flappyfly")]
     public List<EventReference> Flappyfly = new List<EventReference>();
@@ -73,7 +73,22 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField] private EventReference SolvedRiddle;
     public UnityAction SolvedRiddleAction;
+    [SerializeField] private EventReference SolvedRiddleShort;
+    public UnityAction SolvedRiddleActionShort;
     
+    [SerializeField] private EventReference lightFlick;
+    public UnityAction LightFlickAction;
+    
+    [SerializeField] private EventReference PaperBin;
+    public UnityAction PaperBinAction;
+    
+    [SerializeField] private EventReference dinoJump;
+    public UnityAction DinoJumpAction;
+    
+    [SerializeField] private EventReference dinoCoin;
+    public UnityAction DinoCoinAction;
+
+
     //[Header("FlappyFly")]
     //[SerializeField] private EventReference FlyFlapReference;
    // public UnityAction FlyFlapAction;
@@ -87,7 +102,12 @@ public class SoundManager : MonoBehaviour
        PongBallAction += PlayBallHit;
        PongSwooshAction += PlayPongSwoosh;
        KlickEventAction += PlayKlick;
-       
+       LightFlickAction += PlayLightFlick;
+       SolvedRiddleActionShort += PlayRiddleSolvedShort;
+       PaperBinAction += playPaper;
+       DinoJumpAction += DinoJump;
+       DinoCoinAction += DinoCoin;
+
 
     }
     private void OnDisable()
@@ -99,6 +119,12 @@ public class SoundManager : MonoBehaviour
         PongBallAction -= PlayBallHit;
         PongSwooshAction -= PlayPongSwoosh;
         KlickEventAction -= PlayKlick;
+        LightFlickAction -= PlayLightFlick;
+        SolvedRiddleActionShort -= PlayRiddleSolvedShort;
+        PaperBinAction -= playPaper;
+        DinoJumpAction -= DinoJump;
+        DinoCoinAction -= DinoCoin;
+
     }
 
     private void PlayPhatError()
@@ -110,7 +136,36 @@ public class SoundManager : MonoBehaviour
         RuntimeManager.PlayOneShot(PhatError);
         Debug.Log("Klick");
     }
-    
+
+    public void PlayRiddleSolved()
+    {
+        RuntimeManager.PlayOneShot(SolvedRiddle);
+    }
+
+    public void playPaper()
+    {
+        RuntimeManager.PlayOneShot(PaperBin);
+    }
+
+    public void DinoJump()
+    {
+        RuntimeManager.PlayOneShot(dinoJump);
+    }
+
+    public void DinoCoin()
+    {
+        RuntimeManager.PlayOneShot(dinoCoin);
+    }
+
+    private void PlayRiddleSolvedShort()
+    {
+        RuntimeManager.PlayOneShot(SolvedRiddleShort);
+    }
+
+    private void PlayLightFlick()
+    {
+        RuntimeManager.PlayOneShot(lightFlick);
+    }
     
     private void PaperPickUp()
     {

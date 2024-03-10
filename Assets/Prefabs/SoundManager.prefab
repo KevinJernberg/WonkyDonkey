@@ -99,10 +99,38 @@ MonoBehaviour:
       Data3: -1948886855
       Data4: 764077639
     Path: event:/OminusPong/Swoosh
-  FlyFlapReference:
+  PhatError:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1370587886
+      Data2: 1186462211
+      Data3: -641263978
+      Data4: -972548668
+    Path: event:/Lightswitch + Wires/PhatError
+  SolvedRiddle:
+    Guid:
+      Data1: 1489163706
+      Data2: 1138815642
+      Data3: 619395456
+      Data4: 1526629816
+    Path: event:/Lightswitch + Wires/SolvedRiddle
+  SolvedRiddleShort:
+    Guid:
+      Data1: -2007174780
+      Data2: 1319266457
+      Data3: -2141517437
+      Data4: -532274951
+    Path: event:/Lightswitch + Wires/SolvedRiddleShort
+  lightFlick:
+    Guid:
+      Data1: -962545427
+      Data2: 1217977464
+      Data3: -1087241338
+      Data4: -1936270794
+    Path: event:/Lightswitch + Wires/LightSwitch
+  PaperBin:
+    Guid:
+      Data1: -551359051
+      Data2: 1301124176
+      Data3: -1536770893
+      Data4: -538410152
+    Path: event:/Lightswitch + Wires/PaperBin

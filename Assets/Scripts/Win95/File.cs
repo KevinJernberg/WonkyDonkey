@@ -23,11 +23,13 @@ public class File : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.PaperPickUpAction?.Invoke();
         thisImage.raycastTarget = false;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.paperPutDownAction?.Invoke();
         transform.position = startPosition;
         thisImage.raycastTarget = true;
     }

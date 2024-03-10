@@ -17,6 +17,7 @@ public class Cog : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.PaperPickUpAction?.Invoke();
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0.5f);
     }
@@ -28,6 +29,7 @@ public class Cog : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.paperPutDownAction?.Invoke();
         transform.position = startPosition;
         thisImage.raycastTarget = true;
     }

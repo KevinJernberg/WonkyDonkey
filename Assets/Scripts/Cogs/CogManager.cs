@@ -24,6 +24,7 @@ public class CogManager : MonoBehaviour
     public void CheckForWin()
     {
         correct++;
+        SoundManager.Instance.paperPutDownAction?.Invoke();
         if (correct >= 4)
         {
             transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();

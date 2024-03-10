@@ -27,6 +27,7 @@ public class DragLines : MonoBehaviour
                 if (LineManager.Instance.beginning == this) return;
                 if (asterisk != null)
                     RemoveAsterisk();
+                SoundManager.Instance.PaperPickUpAction?.Invoke();
                 asterisk = Instantiate(asteriskPrefab, transform);
                 LineManager.Instance.beginning = this;
                 LineManager.Instance.StartLine();
@@ -35,6 +36,7 @@ public class DragLines : MonoBehaviour
             {
                 LineManager.Instance.end = this;
                 LineManager.Instance.DrawLine();
+                SoundManager.Instance.paperPutDownAction?.Invoke();
             }
         }
         else
@@ -48,6 +50,7 @@ public class DragLines : MonoBehaviour
             LineManager.Instance.beginning = null;
             if (currentLine == null) return;
             currentLine.RemoveLine();
+            SoundManager.Instance.paperPutDownAction?.Invoke();
             currentLine = null;
             LineManager.Instance.CheckForDone();
         }

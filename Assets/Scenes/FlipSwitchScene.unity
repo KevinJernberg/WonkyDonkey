@@ -1367,13 +1367,59 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoCoin.Path
+      value: event:/DinoGame/DinoJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoJump.Path
+      value: event:/DinoGame/DinoJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoCoin.Guid.Data1
+      value: -1695815051
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoCoin.Guid.Data2
+      value: 1153529268
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoCoin.Guid.Data3
+      value: 1688968361
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoCoin.Guid.Data4
+      value: 1641619959
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoJump.Guid.Data1
+      value: -1695815051
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoJump.Guid.Data2
+      value: 1153529268
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoJump.Guid.Data3
+      value: 1688968361
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: dinoJump.Guid.Data4
+      value: 1641619959
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da690c947380b45804348e5ba40511, type: 3}
---- !u!1 &403343353 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1804358829096589062, guid: 90da690c947380b45804348e5ba40511, type: 3}
+--- !u!114 &403343354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
   m_PrefabInstance: {fileID: 403343352}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065b6e1f96fbeec45905de7292b65a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417653611
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,13 +6619,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 403343353}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 403343354}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayRiddleSolved
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
