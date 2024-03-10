@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBugMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemyBugMovement : MonoBehaviour
     public float enemySpeed;
     public bool isHit;
     public float timer = 2;
+    public bool boss;
 
     private void Update()
     {
@@ -33,6 +35,8 @@ public class EnemyBugMovement : MonoBehaviour
 
             if (timer <= 0)
             {
+                if (boss)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 Destroy(this.gameObject);
             }
         }

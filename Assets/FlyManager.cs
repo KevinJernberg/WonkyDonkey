@@ -7,17 +7,25 @@ using UnityEngine.Events;
 
 public class FlyManager : MonoBehaviour
 {
-    private void Awake()
-    {
-        MusicManager.Instance.StopVindosMusic();
-        MusicManager.Instance.PlayFlyFlap();
-    }
 
     private float timer;
+    public bool not;
 
     public static UnityAction flyEnd;
+    
+    
+    private void Awake()
+    {
+        if (MusicManager.Instance != null)
+        {
+         
+            MusicManager.Instance.StopVindosMusic();
+            MusicManager.Instance.PlayFlyFlap();       
+        }
+    }
     private void Update()
     {
+        if (not) return;
         timer += Time.deltaTime;
 
         if (timer > 15)

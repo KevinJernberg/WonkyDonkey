@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3dShooter.unity
     guid: 36722fe62effd3e43a3052fd8d285735
+  - enabled: 1
+    path: Assets/Scenes/FlappyBird 3.unity
+    guid: c733021bdf5ae474e9845879cf95f4c3
   m_configObjects: {}
