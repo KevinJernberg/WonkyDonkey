@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
-using UnityEditorInternal;
 using UnityEngine.Events;
-using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class SoundManager : MonoBehaviour
 {
