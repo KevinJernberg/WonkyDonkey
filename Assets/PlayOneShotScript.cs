@@ -10,6 +10,7 @@ public class PlayOneShotScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        MusicManager.Instance.StopFlyFlap();
         RuntimeManager.PlayOneShot(OneShotOnAwake);
     }
 
