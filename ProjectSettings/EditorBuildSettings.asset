@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 734817fcaaf1493468d862fce4cc421b
   - enabled: 1
+    path: Assets/Scenes/TextPromts.unity
+    guid: f64d4b5b5d0c39c4e9df294547e901a0
+  - enabled: 1
     path: Assets/Scenes/FlappyBird.unity
     guid: b14853a50f58a0b4484e221fc6504efa
+  - enabled: 1
+    path: Assets/Scenes/FlipSwitchScene.unity
+    guid: 6560e10a4c17dfc4cb0b5c73f0582f16
   m_configObjects: {}

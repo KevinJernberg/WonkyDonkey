@@ -24,6 +24,9 @@ public class LightSwitch : MonoBehaviour
     private Sprite onSprite;
     [SerializeField]
     private Sprite offSprite;
+    
+    [SerializeField]
+    private Transform onTransform;
 
     private void Awake()
     {
@@ -36,6 +39,7 @@ public class LightSwitch : MonoBehaviour
         isOn = !isOn;
         spriteRenderer.sprite = isOn ? onSprite : offSprite;
 
+        onTransform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
         if (clickAmount >= 10)
         {
             EnableCircuitPart();

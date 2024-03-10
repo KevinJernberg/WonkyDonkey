@@ -9,6 +9,25 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private GameObject _pipe;
 
     private float _timer;
+    
+    private bool stop;
+    
+    private void OnEnable()
+    {
+        FlyManager.flyEnd += Stop;
+        DinoManager.stopgame += Stop;
+    }
+    
+    private void OnDisable()
+    {
+        FlyManager.flyEnd -= Stop;
+        DinoManager.stopgame -= Stop;
+    }
+    
+    private void Stop()
+    {
+        stop = true;
+    }
     void Start()
     {
         SpawnPipe();
@@ -17,6 +36,7 @@ public class PipeSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stop) return;
         if (_timer > _maxTime)
         {
             SpawnPipe();
@@ -31,7 +51,7 @@ public class PipeSpawner : MonoBehaviour
         Vector3 spawnPos = transform.position + new Vector3(0, Random.Range(-_heightRange, _heightRange));
         GameObject pipe = Instantiate(_pipe, spawnPos, Quaternion.identity);
         
-        Destroy(pipe, 10f);
+        Destroy(pipe, 20f);
     }
     
 }

@@ -74,7 +74,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 94
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -145,9 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e32137d3bb827943b338c6526a9f6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGameObject: {fileID: 0}
+  endGameObject: {fileID: 0}
   stringMaterial: {fileID: 2100000, guid: 5c2ac67d574c0234a888099ed80ccafe, type: 2}
   LineRenderer: {fileID: 0}
   Collider: {fileID: 0}
+  lineCorrect: 0
 --- !u!60 &2051640678575900435
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public class DinoJumper : MonoBehaviour
@@ -59,7 +60,7 @@ public class DinoJumper : MonoBehaviour
                 spriteRenderer.color = Color.white;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             gravToLeft = !gravToLeft;
             Physics2D.gravity = new Vector2(gravToLeft ? 3 : -3, 0);

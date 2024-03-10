@@ -19,6 +19,7 @@ public class ScaleOnHover : MonoBehaviour
     {
         _originalScale = transform.localScale;
         _transform = GetComponent<Transform>();
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void OnMouseEnter()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ErrorCursor : MonoBehaviour
 {
@@ -15,7 +16,24 @@ public class ErrorCursor : MonoBehaviour
     private float spriteTime = 0.15f;
     private float spriteTimer;
 
+    private bool active;
+    
     private int spriteCount;
+    
+    private void OnEnable()
+    {
+        DinoManager.stopgame += Toggle;
+    }
+    
+    private void OnDisable()
+    {
+        DinoManager.stopgame -= Toggle;
+    }
+
+    private void Toggle()
+    {
+        active = true;
+    }
 
     private void Start()
     {
@@ -25,6 +43,7 @@ public class ErrorCursor : MonoBehaviour
 
     private void Update()
     {
+        if (!active) return;
         if (cycleTimer > 0)
         {
             cycleTimer -= Time.deltaTime;
@@ -34,6 +53,11 @@ public class ErrorCursor : MonoBehaviour
             {
                 spriteTimer = spriteTime;
                 SwitchSprite();
+            }
+
+            if (cycleTimer <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

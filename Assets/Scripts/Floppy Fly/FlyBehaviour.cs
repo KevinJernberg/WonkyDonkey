@@ -15,6 +15,7 @@ public class FlyBehaviour : MonoBehaviour
     private float switchTimer;
     
     private bool immunityFrames;
+    private bool stop;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class FlyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stop) return;
         if (switchTimer > 0)
         {
             switchTimer -= Time.deltaTime;
@@ -43,18 +45,33 @@ public class FlyBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (stop) return;
         transform.rotation = Quaternion.Euler(0,0, _rb.velocity.y * _rotationSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (immunityFrames) return;
-            if (other.gameObject.CompareTag("Pipe"))
+        if (other.gameObject.CompareTag("Pipe"))
         {
-            GetComponent<SpriteRenderer>().flipY = !GetComponent<SpriteRenderer>().flipY;
-            _velocity = -_velocity;
-            _rb.gravityScale = -_rb.gravityScale;
-            switchTimer = switchTime;
+            Stop();
+            FlyManager.flyEnd?.Invoke();
         }
+    }
+    
+    private void OnEnable()
+    {
+        DinoManager.stopgame += Stop;
+    }
+    
+    private void OnDisable()
+    {
+        DinoManager.stopgame -= Stop;
+    }
+    
+    private void Stop()
+    {
+        _rb.bodyType = RigidbodyType2D.Static;
+        stop = true;
+        GetComponent<Animator>().enabled = false;
     }
 }
