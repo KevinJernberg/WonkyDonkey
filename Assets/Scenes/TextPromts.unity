@@ -489,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1370}
+  m_AnchoredPosition: {x: 0, y: -1341}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608300815
@@ -512,9 +512,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You are the Wi-Fly\n\nA random fly in a magical world\n\nHowever, this
-    world is\nsuddently Attacked!!!\n\nBy fly-eating plants!!!\n\nDodge the plants,
-    \nand become an epic fly!\n\nGood luck!\nLeft Click to Jump!"
+  m_text: "(!!!This game requires INTERNET!!!!!!)\nYou are the Wi-Fly\n\nA random
+    fly in a magical world\n\nHowever, this world is\nsuddently Attacked!!!\n\nBy
+    fly-eating plants!!!\n\nDodge the plants, \nand become an epic fly!\n\nGood luck!\nLeft
+    Click to Jump!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 66f019724747c5b4682536d15b43b79c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 66f019724747c5b4682536d15b43b79c, type: 2}

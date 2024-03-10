@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlipSwitchScene.unity
     guid: 6560e10a4c17dfc4cb0b5c73f0582f16
+  - enabled: 1
+    path: Assets/Scenes/FlappyBird 2.unity
+    guid: 9bac93491910a4b449ddffb161f521a8
   m_configObjects: {}
