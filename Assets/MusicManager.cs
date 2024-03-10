@@ -53,7 +53,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private EventReference DoodleJumpRef;
     private EventInstance DoodleJumpInst;
     public UnityAction DoodleJumpAction;
-
+    
+    [SerializeField] private EventReference FartSpary;
+    private EventInstance FartSparyInst;
+    public UnityAction FartSparyAction;
 
     private void OnEnable()
     {
@@ -69,6 +72,23 @@ public class MusicManager : MonoBehaviour
         VindowsMusicAction -= PlayVindosMusic;
     }
 
+    public void PlayFart()
+    {
+        FartSparyInst.getPlaybackState(out PLAYBACK_STATE state);
+        if (state != PLAYBACK_STATE.PLAYING)
+        {
+            Debug.Log("spawn");
+            FartSparyInst = RuntimeManager.CreateInstance(FartSpary);
+            FartSparyInst.start();
+        }
+        
+    }
+    
+    public void StopFart()
+    {
+        FartSparyInst.release();
+        FartSparyInst.stop(STOP_MODE.ALLOWFADEOUT);
+    }
     public void PlayFlyFlap()
     {
         FlyFlapMusicInst = RuntimeManager.CreateInstance(FlyFlapMusicReference);

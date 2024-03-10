@@ -8423,6 +8423,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: FartSpary.Path
+      value: event:/3DShooter/FartFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: DoodleJumpRef.Path
+      value: event:/DoodleGame/DoodleJump1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: FartSpary.Guid.Data1
+      value: 2129100907
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: FartSpary.Guid.Data2
+      value: 1115777605
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: FartSpary.Guid.Data3
+      value: -1370037576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: FartSpary.Guid.Data4
+      value: 1495116299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: DoodleJumpRef.Guid.Data1
+      value: 1851133810
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: DoodleJumpRef.Guid.Data2
+      value: 1316978838
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: DoodleJumpRef.Guid.Data3
+      value: 137237123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+      propertyPath: DoodleJumpRef.Guid.Data4
+      value: 654795128
+      objectReference: {fileID: 0}
     - target: {fileID: 1112154767395889031, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
       propertyPath: m_RootOrder
       value: 14

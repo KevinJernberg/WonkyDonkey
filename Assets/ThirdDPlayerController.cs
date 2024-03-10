@@ -28,6 +28,7 @@ public class ThirdDPlayerController : MonoBehaviour
 
     private void Start()
     {
+        MusicManager.Instance.StopDoodleMusic();
         anim = GetComponent<Animator>();
     }
 
@@ -36,8 +37,20 @@ public class ThirdDPlayerController : MonoBehaviour
         moveVector = transform.right * (Input.GetAxis("Horizontal")) + transform.forward * Input.GetAxis("Vertical");
 
         controller.Move(moveVector * speed * Time.deltaTime);
+
+        if (Input.GetMouseButton(0))
+        {
+            MusicManager.Instance.PlayFart();
+            anim.SetBool("LighterIsOn", true);
+        }
         
-        anim.SetBool("LighterIsOn", Input.GetMouseButton(0));
+        else
+        {
+            Debug.Log("Stop");
+            MusicManager.Instance.StopFart();
+            anim.SetBool("LighterIsOn", false);
+        }
+       
     }
     
     
