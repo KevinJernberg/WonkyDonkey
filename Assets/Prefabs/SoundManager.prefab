@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1804358829096589062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804358829096589060}
+  - component: {fileID: 1804358829096589063}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804358829096589060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804358829096589062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.004997, y: 2.5426688, z: 0.10093511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804358829096589063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804358829096589062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065b6e1f96fbeec45905de7292b65a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoockieLevel: []
+  DinoJump: []
+  Flappyfly: []
+  KlickSound: []
+  Pong: []
+  VoiceLines: []
+  paperPickUpReference:
+    Guid:
+      Data1: -532264569
+      Data2: 1191168048
+      Data3: 975348388
+      Data4: 1926798080
+    Path: event:/Lightswitch + Wires/PickUpWire
+  paperPutDownReference:
+    Guid:
+      Data1: -1731521584
+      Data2: 1254180068
+      Data3: 1825612715
+      Data4: 1619018535
+    Path: event:/Lightswitch + Wires/PlaceWire
+  fliesEnemieEventAttackReference:
+    Guid:
+      Data1: 1240209897
+      Data2: 1294566388
+      Data3: -1416548221
+      Data4: 1838354640
+    Path: event:/3DShooter/Flies/FlyAttack1
+  fliesEnemieEventDeathReference:
+    Guid:
+      Data1: -1065020562
+      Data2: 1078370372
+      Data3: 742545800
+      Data4: 1475269857
+    Path: event:/3DShooter/Flies/FlyDeathStinger
