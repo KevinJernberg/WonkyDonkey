@@ -14,7 +14,7 @@ public class FlyManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 20)
+        if (timer > 15)
         {
             DinoManager.stopgame?.Invoke();
         }
