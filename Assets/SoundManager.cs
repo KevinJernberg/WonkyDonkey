@@ -44,12 +44,16 @@ public class SoundManager : MonoBehaviour
 
     public EventInstance instFliest;
     
-    //[Header("Wires")]
+    [Header("Paper")]
     [SerializeField] private EventReference paperPickUpReference;
     public UnityAction PaperPickUpAction;
     
     [SerializeField] private EventReference paperPutDownReference;
     public UnityAction paperPutDownAction;
+
+    [Header("Klick")] 
+    [SerializeField] private EventReference klickReference;
+    public UnityAction KlickEventAction;
 
     [Header("3D Shooters")]
     [SerializeField] private EventReference fliesEnemieEventAttackReference;
@@ -74,6 +78,7 @@ public class SoundManager : MonoBehaviour
        // fliesEnemieEventDeathAtcion += FliesEnemiesDeath;
        PongBallAction += PlayBallHit;
        PongSwooshAction += PlayPongSwoosh;
+       KlickEventAction += PlayKlick;
 
     }
     private void OnDisable()
@@ -82,8 +87,16 @@ public class SoundManager : MonoBehaviour
         paperPutDownAction -= PaperPutDownAction;
         //fliesEnemiesEventAttackAction -= FliesEnemiesDeath;
         //fliesEnemieEventDeathAtcion -= FliesEnemiesDeath;
+        PongBallAction -= PlayBallHit;
+        PongSwooshAction -= PlayPongSwoosh;
+        KlickEventAction -= PlayKlick;
     }
 
+    public void PlayKlick()
+    {
+        RuntimeManager.PlayOneShot(klickReference);
+        Debug.Log("Klick");
+    }
     private void PaperPickUp()
     {
         RuntimeManager.PlayOneShot(paperPickUpReference);

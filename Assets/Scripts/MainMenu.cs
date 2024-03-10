@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Awake()
+    {
+        MusicManager.Instance.VindowsMusicAction?.Invoke();
+        Debug.Log("INstnace creted");
+    }
 
- public void PlayGame()
+    public void PlayGame()
  {
      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
  }
