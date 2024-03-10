@@ -72,16 +72,16 @@ MonoBehaviour:
   active: 1
   scanLineJitter:
     m_OverrideState: 1
-    m_Value: 0.038
+    m_Value: 0
   verticalJump:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.021
   horizontalShake:
     m_OverrideState: 1
     m_Value: 0
   colorDrift:
     m_OverrideState: 1
-    m_Value: 0.114
+    m_Value: 0.024
 --- !u!114 &-7011558710299706105
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -96,17 +96,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   color:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0.16209108, b: 0.8113208, a: 1}
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.225
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0.393
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.581
+    m_Value: 0.149
 --- !u!114 &-987406439478009339
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d536c364ebc24dd6b769ef6affde936a, type: 3}
   m_Name: DigitalGlitchVolume
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0.007
 --- !u!114 &5932969237171010068
 MonoBehaviour:
   m_ObjectHideFlags: 3
