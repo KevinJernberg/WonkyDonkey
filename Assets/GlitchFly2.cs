@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlitchFly2 : MonoBehaviour
 {
@@ -20,6 +21,6 @@ public class GlitchFly2 : MonoBehaviour
     
     private void Stop()
     {
-        gamobj1.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
