@@ -49,6 +49,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private EventReference FlyFlapDeathReference;
     private EventInstance FlyFlapDeathInst;
     public UnityAction FlyFlapDeathAction;
+    
+    [SerializeField] private EventReference DoodleJumpRef;
+    private EventInstance DoodleJumpInst;
+    public UnityAction DoodleJumpAction;
 
 
     private void OnEnable()
@@ -91,6 +95,18 @@ public class MusicManager : MonoBehaviour
     {
         fliesMusicInst = RuntimeManager.CreateInstance(FliesMusic);
         fliesMusicInst.start();
+    }
+
+    public void PlayDoodleMusic()
+    {
+        DoodleJumpInst = RuntimeManager.CreateInstance(DoodleJumpRef);
+        DoodleJumpInst.start();
+    }
+    
+    public void StopDoodleMusic()
+    {
+        DoodleJumpInst.release();
+        DoodleJumpInst.stop(STOP_MODE.IMMEDIATE);
     }
     
     public void StopFliesMusic()

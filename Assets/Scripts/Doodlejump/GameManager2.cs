@@ -8,6 +8,7 @@ public class GameManager2 : MonoBehaviour
     public int platformcount = 300;
     void Start()
     {
+        MusicManager.Instance.PlayDoodleMusic();
         Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < platformcount; i++)
         {
