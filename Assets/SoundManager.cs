@@ -71,6 +71,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private EventReference PhatError;
     public UnityAction PhatErrorAction;
     
+    [SerializeField] private EventReference SolvedRiddle;
+    public UnityAction SolvedRiddleAction;
+    
     //[Header("FlappyFly")]
     //[SerializeField] private EventReference FlyFlapReference;
    // public UnityAction FlyFlapAction;
@@ -100,7 +103,7 @@ public class SoundManager : MonoBehaviour
 
     private void PlayPhatError()
     {
-        RuntimeManager.PlayOneShot(klickReference);
+        RuntimeManager.PlayOneShot(PhatError);
     }
     public void PlayKlick()
     {

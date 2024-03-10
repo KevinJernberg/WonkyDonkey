@@ -9,6 +9,7 @@ public class FlyManager : MonoBehaviour
 {
     private void Awake()
     {
+        MusicManager.Instance.StopVindosMusic();
         MusicManager.Instance.PlayFlyFlap();
     }
 
