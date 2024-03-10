@@ -15,6 +15,7 @@ TagManager:
   - CactusDespawner
   - Coin
   - Ball
+  - Flame
   layers:
   - Default
   - TransparentFX

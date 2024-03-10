@@ -10,6 +10,8 @@ public class EnemyBugMovement : MonoBehaviour
     public Rigidbody rb;
 
     public float enemySpeed;
+    public bool isHit;
+    public float timer = 2;
 
     private void Update()
     {
@@ -23,6 +25,16 @@ public class EnemyBugMovement : MonoBehaviour
         else
         {
             anim.enabled = false;
+        }
+
+        if (isHit)
+        {
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
