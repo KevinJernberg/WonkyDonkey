@@ -46,6 +46,7 @@ public class InternetUp : MonoBehaviour
             }
             if (timer > 4)
             {
+                FlyBehaviour.stop = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

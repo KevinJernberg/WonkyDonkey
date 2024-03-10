@@ -38,6 +38,7 @@ public class DinoManager : MonoBehaviour
         if (coins >= 3)
         {
             stopgame?.Invoke();
+            Physics2D.gravity = new Vector2(0f, -9.81f);
         }
         else if (coins >= 2)
         {

@@ -15,13 +15,16 @@ public class FlyBehaviour : MonoBehaviour
     private float switchTimer;
     
     private bool immunityFrames;
-    private bool stop;
+    public static bool stop;
     
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _rb.velocity = Vector2.zero;
+        stop = false;
     }
+
 
     // Update is called once per frame
     void Update()
