@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebd52b2332a6c40b98bcbe9acf0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VindosMusic:
+    Guid:
+      Data1: 2072887788
+      Data2: 1204579715
+      Data3: 801175739
+      Data4: 221959694
+    Path: event:/Music/WindosRiddleMusic
   FliesMusic:
     Guid:
       Data1: -800486846
@@ -58,3 +65,24 @@ MonoBehaviour:
       Data3: -938244725
       Data4: 427911663
     Path: event:/OminusPong/PongAmbiance
+  FlyFlapMusicReference:
+    Guid:
+      Data1: 502799730
+      Data2: 1327131400
+      Data3: -1691668046
+      Data4: 2106296904
+    Path: event:/Music/FlappyFlyMusic
+  FlyFlapBuzzReference:
+    Guid:
+      Data1: -514163254
+      Data2: 1137708915
+      Data3: 378607020
+      Data4: 324892016
+    Path: event:/FlappyFly/FlappyFlyFlyFlying
+  FlyFlapDeathReference:
+    Guid:
+      Data1: 971604845
+      Data2: 1234177364
+      Data3: 669959604
+      Data4: -1479193238
+    Path: event:/FlappyFly/FlappyFlyDeathstinger

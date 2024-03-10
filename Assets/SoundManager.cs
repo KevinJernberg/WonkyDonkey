@@ -67,6 +67,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private EventReference PongSwooshReference;
     public UnityAction PongSwooshAction;
     
+    [Header("Wire")]
+    [SerializeField] private EventReference PhatError;
+    public UnityAction PhatErrorAction;
+    
+    //[Header("FlappyFly")]
+    //[SerializeField] private EventReference FlyFlapReference;
+   // public UnityAction FlyFlapAction;
     
     private void OnEnable()
     {
@@ -77,6 +84,7 @@ public class SoundManager : MonoBehaviour
        PongBallAction += PlayBallHit;
        PongSwooshAction += PlayPongSwoosh;
        KlickEventAction += PlayKlick;
+       
 
     }
     private void OnDisable()
@@ -90,11 +98,17 @@ public class SoundManager : MonoBehaviour
         KlickEventAction -= PlayKlick;
     }
 
-    public void PlayKlick()
+    private void PlayPhatError()
     {
         RuntimeManager.PlayOneShot(klickReference);
+    }
+    public void PlayKlick()
+    {
+        RuntimeManager.PlayOneShot(PhatError);
         Debug.Log("Klick");
     }
+    
+    
     private void PaperPickUp()
     {
         RuntimeManager.PlayOneShot(paperPickUpReference);

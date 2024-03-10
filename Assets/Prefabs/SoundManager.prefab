@@ -64,6 +64,13 @@ MonoBehaviour:
       Data3: 1825612715
       Data4: 1619018535
     Path: event:/Lightswitch + Wires/PlaceWire
+  klickReference:
+    Guid:
+      Data1: 458385710
+      Data2: 1135675250
+      Data3: -46095958
+      Data4: -261748005
+    Path: event:/KlickSFX/KlickSound
   fliesEnemieEventAttackReference:
     Guid:
       Data1: 1240209897
@@ -92,3 +99,10 @@ MonoBehaviour:
       Data3: -1948886855
       Data4: 764077639
     Path: event:/OminusPong/Swoosh
+  FlyFlapReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

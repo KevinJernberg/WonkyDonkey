@@ -42,6 +42,7 @@ public class FlyBehaviour : MonoBehaviour
         
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            MusicManager.Instance.SetBuzzParameter();
             _rb.velocity = Vector2.up * _velocity;
         } 
     }
@@ -58,6 +59,7 @@ public class FlyBehaviour : MonoBehaviour
         {
             Stop();
             FlyManager.flyEnd?.Invoke();
+            MusicManager.Instance.StopFlyFlap();
         }
     }
     

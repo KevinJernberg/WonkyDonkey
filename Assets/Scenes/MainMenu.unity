@@ -666,28 +666,8 @@ PrefabInstance:
       value: MusicManager
       objectReference: {fileID: 0}
     - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: VindosMusic.Path
-      value: event:/Music/WindosRiddleMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
       propertyPath: WindosMusic.Path
       value: event:/Music/WindosRiddleMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: VindosMusic.Guid.Data1
-      value: 2072887788
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: VindosMusic.Guid.Data2
-      value: 1204579715
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: VindosMusic.Guid.Data3
-      value: 801175739
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: VindosMusic.Guid.Data4
-      value: 221959694
       objectReference: {fileID: 0}
     - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
       propertyPath: WindosMusic.Guid.Data1
@@ -1379,26 +1359,6 @@ PrefabInstance:
     - target: {fileID: 1804358829096589062, guid: 90da690c947380b45804348e5ba40511, type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: klickReference.Path
-      value: event:/KlickSFX/KlickSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: klickReference.Guid.Data1
-      value: 458385710
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: klickReference.Guid.Data2
-      value: 1135675250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: klickReference.Guid.Data3
-      value: -46095958
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: klickReference.Guid.Data4
-      value: -261748005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da690c947380b45804348e5ba40511, type: 3}

@@ -35,6 +35,20 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private EventReference PongMusic;
     private EventInstance pongMusicInst;
     public UnityAction PongMusicAction;
+    
+    [Header("FlappyFly")]
+
+    [SerializeField] private EventReference FlyFlapMusicReference;
+    private EventInstance FlyFlapMusicInst;
+    public UnityAction FlyFlapMusicAction;
+    
+    [SerializeField] private EventReference FlyFlapBuzzReference;
+    public EventInstance FlyFlapBuzzInst;
+    public UnityAction FlyFlapBuzzAction;
+    
+    [SerializeField] private EventReference FlyFlapDeathReference;
+    private EventInstance FlyFlapDeathInst;
+    public UnityAction FlyFlapDeathAction;
 
 
     private void OnEnable()
@@ -51,6 +65,28 @@ public class MusicManager : MonoBehaviour
         VindowsMusicAction -= PlayVindosMusic;
     }
 
+    public void PlayFlyFlap()
+    {
+        FlyFlapMusicInst = RuntimeManager.CreateInstance(FlyFlapMusicReference);
+        FlyFlapBuzzInst = RuntimeManager.CreateInstance(FlyFlapBuzzReference);
+        FlyFlapMusicInst.start();
+        FlyFlapBuzzInst.start();
+    }
+
+    public void SetBuzzParameter()
+    {
+        FlyFlapBuzzInst.setParameterByName("FlappyFlyPitchShifter", 1, false);
+    }
+
+    public void StopFlyFlap()
+    {
+        FlyFlapMusicInst.release();
+        FlyFlapMusicInst.stop(STOP_MODE.IMMEDIATE);
+        FlyFlapBuzzInst.release();
+        FlyFlapBuzzInst.stop(STOP_MODE.IMMEDIATE);
+        RuntimeManager.PlayOneShot(FlyFlapDeathReference);
+    }
+    
     public void PlayFliesMusic()
     {
         fliesMusicInst = RuntimeManager.CreateInstance(FliesMusic);

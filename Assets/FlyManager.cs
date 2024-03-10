@@ -7,6 +7,11 @@ using UnityEngine.Events;
 
 public class FlyManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        MusicManager.Instance.PlayFlyFlap();
+    }
+
     private float timer;
 
     public static UnityAction flyEnd;
