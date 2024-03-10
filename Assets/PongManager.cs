@@ -29,6 +29,9 @@ public class PongManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        MusicManager.Instance.PlayPongMusic();
+        
     }
 
     public void AddCount()
@@ -38,6 +41,8 @@ public class PongManager : MonoBehaviour
 
         if (bounceCount >= 10)
         {
+            SoundManager.Instance.PongSwooshAction?.Invoke();
+            MusicManager.Instance.StopPongMusic();
             if (ball.transform.position.x > 0)
             {
                 endPong?.Invoke(paddleRight);
@@ -45,6 +50,7 @@ public class PongManager : MonoBehaviour
             else
             {
                 endPong?.Invoke(paddleLeft);
+                
             }
 
             Destroy(ball);

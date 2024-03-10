@@ -78,3 +78,17 @@ MonoBehaviour:
       Data3: 742545800
       Data4: 1475269857
     Path: event:/3DShooter/Flies/FlyDeathStinger
+  PongBallReference:
+    Guid:
+      Data1: -1536085067
+      Data2: 1174233698
+      Data3: -226002300
+      Data4: 1115539843
+    Path: event:/OminusPong/BallHit
+  PongSwooshReference:
+    Guid:
+      Data1: 430584419
+      Data2: 1150855244
+      Data3: -1948886855
+      Data4: 764077639
+    Path: event:/OminusPong/Swoosh

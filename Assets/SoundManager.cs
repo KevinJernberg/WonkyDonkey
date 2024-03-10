@@ -19,7 +19,8 @@ public class SoundManager : MonoBehaviour
         } 
         else 
         { 
-            Instance = this; 
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -56,12 +57,24 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField] private EventReference fliesEnemieEventDeathReference;
     public UnityAction fliesEnemieEventDeathAtcion;
+    
+    [Header("pong")]
+    [SerializeField] private EventReference PongBallReference;
+    public UnityAction PongBallAction;
+    
+    [SerializeField] private EventReference PongSwooshReference;
+    public UnityAction PongSwooshAction;
+    
+    
     private void OnEnable()
     {
         PaperPickUpAction += PaperPickUp;
         paperPutDownAction += PaperPutDownAction;
         //fliesEnemiesEventAttackAction += FliesEnemieEventAttack;
        // fliesEnemieEventDeathAtcion += FliesEnemiesDeath;
+       PongBallAction += PlayBallHit;
+       PongSwooshAction += PlayPongSwoosh;
+
     }
     private void OnDisable()
     {
@@ -89,6 +102,16 @@ public class SoundManager : MonoBehaviour
     private void FliesEnemiesDeath()
     {
         
+    }
+
+    public void PlayBallHit()
+    {
+        RuntimeManager.PlayOneShot(PongBallReference);
+    }
+
+    public void PlayPongSwoosh()
+    {
+        RuntimeManager.PlayOneShot(PongSwooshReference);
     }
 
     

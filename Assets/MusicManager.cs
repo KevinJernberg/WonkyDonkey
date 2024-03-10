@@ -20,6 +20,7 @@ public class MusicManager : MonoBehaviour
         else 
         { 
             Instance = this; 
+            DontDestroyOnLoad(this.gameObject);
         }
     }
     
@@ -27,14 +28,21 @@ public class MusicManager : MonoBehaviour
     private EventInstance fliesMusicInst;
     public UnityAction FliesMusicAction;
     
+    [SerializeField] private EventReference PongMusic;
+    private EventInstance pongMusicInst;
+    public UnityAction PongMusicAction;
+
+
     private void OnEnable()
     {
         FliesMusicAction += PlayFliesMusic;
+        PongMusicAction += PlayPongMusic;
     }
     
     private void OnDisable()
     {
         FliesMusicAction -= PlayFliesMusic;
+        PongMusicAction -= PlayPongMusic;
     }
 
     public void PlayFliesMusic()
@@ -47,5 +55,17 @@ public class MusicManager : MonoBehaviour
     {
         fliesMusicInst.release();
         fliesMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void PlayPongMusic()
+    {
+        pongMusicInst = RuntimeManager.CreateInstance(PongMusic);
+        pongMusicInst.start();
+    }
+
+    public void StopPongMusic()
+    {
+        pongMusicInst.release();
+        pongMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
 }
