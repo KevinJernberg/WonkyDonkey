@@ -51,3 +51,10 @@ MonoBehaviour:
       Data3: -1208298875
       Data4: -1461844194
     Path: event:/Music/3DShooter
+  PongMusic:
+    Guid:
+      Data1: -1570762854
+      Data2: 1118443386
+      Data3: -938244725
+      Data4: 427911663
+    Path: event:/OminusPong/PongAmbiance

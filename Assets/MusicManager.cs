@@ -24,6 +24,10 @@ public class MusicManager : MonoBehaviour
         }
     }
     
+    [SerializeField] private EventReference VindosMusic;
+    private EventInstance vindowsMusicInst;
+    public UnityAction VindowsMusicAction;
+    
     [SerializeField] private EventReference FliesMusic;
     private EventInstance fliesMusicInst;
     public UnityAction FliesMusicAction;
@@ -37,12 +41,14 @@ public class MusicManager : MonoBehaviour
     {
         FliesMusicAction += PlayFliesMusic;
         PongMusicAction += PlayPongMusic;
+        VindowsMusicAction += PlayVindosMusic;
     }
     
     private void OnDisable()
     {
         FliesMusicAction -= PlayFliesMusic;
         PongMusicAction -= PlayPongMusic;
+        VindowsMusicAction -= PlayVindosMusic;
     }
 
     public void PlayFliesMusic()
@@ -67,5 +73,22 @@ public class MusicManager : MonoBehaviour
     {
         pongMusicInst.release();
         pongMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void PlayVindosMusic()
+    {
+        vindowsMusicInst.getPlaybackState(out PLAYBACK_STATE state);
+        if (state != PLAYBACK_STATE.PLAYING)
+        {
+            vindowsMusicInst = RuntimeManager.CreateInstance(VindosMusic);
+            vindowsMusicInst.start();
+        }
+        
+    }
+    
+    public void StopVindosMusic()
+    {
+        vindowsMusicInst.release();
+        vindowsMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
 }
