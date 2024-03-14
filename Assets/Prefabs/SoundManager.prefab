@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoockieLevel: []
-  DinoJump: []
   Flappyfly: []
   KlickSound: []
   Pong: []
@@ -134,3 +133,17 @@ MonoBehaviour:
       Data3: -1536770893
       Data4: -538410152
     Path: event:/Lightswitch + Wires/PaperBin
+  dinoJump:
+    Guid:
+      Data1: -1695815051
+      Data2: 1153529268
+      Data3: 1688968361
+      Data4: 1641619959
+    Path: event:/DinoGame/DinoJump
+  dinoCoin:
+    Guid:
+      Data1: -530790730
+      Data2: 1213051181
+      Data3: 248174228
+      Data4: 1041559523
+    Path: event:/DinoGame/DinoCoinPickUp

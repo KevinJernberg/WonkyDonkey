@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine.Events;
+using Debug = UnityEngine.Debug;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class SoundManager : MonoBehaviour
 {
@@ -55,10 +58,12 @@ public class SoundManager : MonoBehaviour
     public UnityAction KlickEventAction;
 
     [Header("3D Shooters")]
-    [SerializeField] private EventReference fliesEnemieEventAttackReference;
+    [SerializeField] public EventReference fliesEnemieEventAttackReference;
+
+    private EventInstance flieAttackInst;
     public UnityAction fliesEnemiesEventAttackAction;
     
-    [SerializeField] private EventReference fliesEnemieEventDeathReference;
+    [SerializeField] public EventReference fliesEnemieEventDeathReference;
     public UnityAction fliesEnemieEventDeathAtcion;
     
     [Header("pong")]
@@ -97,9 +102,9 @@ public class SoundManager : MonoBehaviour
     private void OnEnable()
     {
         PaperPickUpAction += PaperPickUp;
-        paperPutDownAction += PaperPutDownAction;
+        paperPutDownAction += PaperPutDownAction; 
         //fliesEnemiesEventAttackAction += FliesEnemieEventAttack;
-       // fliesEnemieEventDeathAtcion += FliesEnemiesDeath;
+       //fliesEnemieEventDeathAtcion += FliesEnemiesDeath;
        PongBallAction += PlayBallHit;
        PongSwooshAction += PlayPongSwoosh;
        KlickEventAction += PlayKlick;
@@ -180,14 +185,18 @@ public class SoundManager : MonoBehaviour
         RuntimeManager.PlayOneShot(paperPutDownReference);
     }
 
-    public void FliesEnemieEventAttack(GameObject FlieObject)
+    public void FliesEnemieEventAttack(GameObject flieObject)
     {
-        RuntimeManager.PlayOneShotAttached(fliesEnemieEventAttackReference, FlieObject);
+        flieAttackInst = RuntimeManager.CreateInstance(fliesEnemieEventAttackReference);
+        RuntimeManager.AttachInstanceToGameObject(flieAttackInst, flieObject.transform);
+        flieAttackInst.start();
     }
 
-    private void FliesEnemiesDeath()
+    public void FliesEnemiesDeath(GameObject flieObject)
     {
-        
+        flieAttackInst.stop(STOP_MODE.IMMEDIATE);
+        flieAttackInst.release();
+        RuntimeManager.PlayOneShotAttached(fliesEnemieEventDeathReference, flieObject);
     }
 
     public void PlayBallHit()
