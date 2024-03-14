@@ -24,6 +24,8 @@ public class MusicManager : MonoBehaviour
         }
     }
     
+    
+    
     [SerializeField] private EventReference VindosMusic;
     private EventInstance vindowsMusicInst;
     public UnityAction VindowsMusicAction;
@@ -74,18 +76,16 @@ public class MusicManager : MonoBehaviour
 
     public void PlayFart()
     {
-        FartSparyInst.getPlaybackState(out PLAYBACK_STATE state);
-        if (state != PLAYBACK_STATE.PLAYING)
-        {
-            Debug.Log("spawn");
+        //FartSparyInst.getPlaybackState(out PLAYBACK_STATE state);
+        Debug.Log("Is playing");
             FartSparyInst = RuntimeManager.CreateInstance(FartSpary);
             FartSparyInst.start();
-        }
-        
+            
     }
     
     public void StopFart()
     {
+        Debug.Log("is Stopped");
         FartSparyInst.release();
         FartSparyInst.stop(STOP_MODE.ALLOWFADEOUT);
     }

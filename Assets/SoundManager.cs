@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
 
     public EventInstance instFliest;
     
+
     [Header("Paper")]
     [SerializeField] private EventReference paperPickUpReference;
     public UnityAction PaperPickUpAction;
@@ -127,13 +128,15 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    
+    
     private void PlayPhatError()
     {
         RuntimeManager.PlayOneShot(PhatError);
     }
     public void PlayKlick()
     {
-        RuntimeManager.PlayOneShot(PhatError);
+        RuntimeManager.PlayOneShot(klickReference);
         Debug.Log("Klick");
     }
 

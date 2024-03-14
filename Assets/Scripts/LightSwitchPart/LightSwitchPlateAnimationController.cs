@@ -12,6 +12,8 @@ public class LightSwitchPlateAnimationController : MonoBehaviour
 
     public void Open()
     {
+        SoundManager.Instance.SolvedRiddleActionShort?.Invoke();
+        Debug.Log("Instance played");
         animator.SetTrigger("Open");
     }
 }

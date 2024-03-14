@@ -43,7 +43,6 @@ public class LightSwitch : MonoBehaviour
         onTransform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
         if (clickAmount >= 10)
         {
-            SoundManager.Instance.SolvedRiddleActionShort?.Invoke();
             EnableCircuitPart();
             transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();
         }

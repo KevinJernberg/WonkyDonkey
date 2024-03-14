@@ -14,6 +14,8 @@ public class ThirdDPlayerController : MonoBehaviour
 
     private Animator anim;
     
+    private bool canShoot;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -36,19 +38,29 @@ public class ThirdDPlayerController : MonoBehaviour
     {
         moveVector = transform.right * (Input.GetAxis("Horizontal")) + transform.forward * Input.GetAxis("Vertical");
 
+        
+        
         controller.Move(moveVector * speed * Time.deltaTime);
 
         if (Input.GetMouseButton(0))
-        {
-            MusicManager.Instance.PlayFart();
+        { 
+            
+            if (canShoot)
+            {
+                Debug.Log("Down");
+                MusicManager.Instance.PlayFart();
+                canShoot = false;
+            }
+            
             anim.SetBool("LighterIsOn", true);
         }
         
         else
         {
-            Debug.Log("Stop");
+            Debug.Log("Up");
             MusicManager.Instance.StopFart();
             anim.SetBool("LighterIsOn", false);
+            canShoot = true;
         }
        
     }

@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void Awake()
     {
         MusicManager.Instance.VindowsMusicAction?.Invoke();
-        Debug.Log("INstnace creted");
+        Debug.Log("Instnace creted");
     }
 
     public void PlayGame()
