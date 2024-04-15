@@ -86,3 +86,17 @@ MonoBehaviour:
       Data3: 669959604
       Data4: -1479193238
     Path: event:/FlappyFly/FlappyFlyDeathstinger
+  DoodleJumpRef:
+    Guid:
+      Data1: 1851133810
+      Data2: 1316978838
+      Data3: 137237123
+      Data4: 654795128
+    Path: event:/DoodleGame/DoodleJump1
+  FartSpary:
+    Guid:
+      Data1: 2129100907
+      Data2: 1115777605
+      Data3: -1370037576
+      Data4: 1495116299
+    Path: event:/3DShooter/FartFire
