@@ -118,6 +118,7 @@ public class SoundManager : MonoBehaviour
        PongSwooshAction += PlayPongSwoosh;
        KlickEventAction += PlayKlick;
        LightFlickAction += PlayLightFlick;
+       SolvedRiddleAction += PlayRiddleSolved;
        SolvedRiddleActionShort += PlayRiddleSolvedShort;
        PaperBinAction += playPaper;
        DinoJumpAction += DinoJump;

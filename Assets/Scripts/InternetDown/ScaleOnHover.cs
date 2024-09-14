@@ -37,5 +37,6 @@ public class ScaleOnHover : MonoBehaviour
         if (clicked) return;
         clicked = true;
         clickEvent?.Invoke();
+        SoundManager.Instance.SolvedRiddleAction?.Invoke();
     }
 }

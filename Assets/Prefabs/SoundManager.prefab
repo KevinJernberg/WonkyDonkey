@@ -149,11 +149,11 @@ MonoBehaviour:
     Path: event:/DinoGame/DinoJump
   dinoCoin:
     Guid:
-      Data1: -1695815051
-      Data2: 1153529268
-      Data3: 1688968361
-      Data4: 1641619959
-    Path: event:/DinoGame/DinoJump
+      Data1: -530790730
+      Data2: 1213051181
+      Data3: 248174228
+      Data4: 1041559523
+    Path: event:/DinoGame/DinoCoinPickUp
   DoodleJumpsReference:
     Guid:
       Data1: 1851133810
