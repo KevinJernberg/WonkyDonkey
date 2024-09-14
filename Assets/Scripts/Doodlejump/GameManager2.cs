@@ -9,6 +9,9 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         MusicManager.Instance.PlayDoodleMusic();
+
+        MusicManager.Instance.StopPongMusic();
+
         Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < platformcount; i++)
         {

@@ -36,8 +36,15 @@ public class EnemyBugMovement : MonoBehaviour
             if (timer <= 0)
             {
                 if (boss)
+                {
+                    MusicManager.Instance.StopFliesMusic();
+                    MusicManager.Instance.StopFart();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    Destroy(this.gameObject);
+                }
+
                 Destroy(this.gameObject);
+
             }
         }
     }

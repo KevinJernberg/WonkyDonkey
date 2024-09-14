@@ -645,6 +645,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: FlySplatReference.Path
+      value: event:/FlappyFly/FlappyFlyDeathstinger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Path
+      value: event:/Lightswitch + Wires/SolvedRiddleShort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: FlySplatReference.Guid.Data1
+      value: 971604845
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: FlySplatReference.Guid.Data2
+      value: 1234177364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: FlySplatReference.Guid.Data3
+      value: 669959604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: FlySplatReference.Guid.Data4
+      value: -1479193238
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data1
+      value: 1019763645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data2
+      value: 1078424246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data3
+      value: -222470746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data4
+      value: -718274903
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da690c947380b45804348e5ba40511, type: 3}
 --- !u!1 &204719244
@@ -1516,7 +1556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452732531
 GameObject:
@@ -1594,6 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37145b92698cc88459ba97226bf73ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  not: 0
 --- !u!4 &1537986453
 Transform:
   m_ObjectHideFlags: 0

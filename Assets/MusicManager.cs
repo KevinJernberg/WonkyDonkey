@@ -42,19 +42,19 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField] private EventReference FlyFlapMusicReference;
     private EventInstance FlyFlapMusicInst;
-    public UnityAction FlyFlapMusicAction;
     
     [SerializeField] private EventReference FlyFlapBuzzReference;
     public EventInstance FlyFlapBuzzInst;
-    public UnityAction FlyFlapBuzzAction;
-    
+
+    public UnityAction FlyFlapAction;
+
     [SerializeField] private EventReference FlyFlapDeathReference;
     private EventInstance FlyFlapDeathInst;
     public UnityAction FlyFlapDeathAction;
     
     [SerializeField] private EventReference DoodleJumpRef;
     private EventInstance DoodleJumpInst;
-    public UnityAction DoodleJumpAction;
+    public UnityAction DoodleJumpMusicAction;
     
     [SerializeField] private EventReference FartSpary;
     private EventInstance FartSparyInst;
@@ -65,6 +65,8 @@ public class MusicManager : MonoBehaviour
         FliesMusicAction += PlayFliesMusic;
         PongMusicAction += PlayPongMusic;
         VindowsMusicAction += PlayVindosMusic;
+        FlyFlapAction += PlayFlyFlap;
+        DoodleJumpMusicAction += PlayDoodleMusic;
     }
     
     private void OnDisable()
@@ -72,79 +74,99 @@ public class MusicManager : MonoBehaviour
         FliesMusicAction -= PlayFliesMusic;
         PongMusicAction -= PlayPongMusic;
         VindowsMusicAction -= PlayVindosMusic;
+        FlyFlapAction -= PlayFlyFlap;
+        DoodleJumpMusicAction -= PlayDoodleMusic;
     }
 
     public void PlayFart()
     {
         //FartSparyInst.getPlaybackState(out PLAYBACK_STATE state);
-        Debug.Log("Is playing");
+        Debug.Log("Fartspray Is playing");
             FartSparyInst = RuntimeManager.CreateInstance(FartSpary);
             FartSparyInst.start();
-            
     }
     
     public void StopFart()
     {
-        Debug.Log("is Stopped");
+        Debug.Log("Fart spray Stopped");
         FartSparyInst.release();
         FartSparyInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
     public void PlayFlyFlap()
     {
-        FlyFlapMusicInst = RuntimeManager.CreateInstance(FlyFlapMusicReference);
-        FlyFlapBuzzInst = RuntimeManager.CreateInstance(FlyFlapBuzzReference);
-        FlyFlapMusicInst.start();
-        FlyFlapBuzzInst.start();
-    }
+        FlyFlapMusicInst.getPlaybackState(out PLAYBACK_STATE state);
+        if (state != PLAYBACK_STATE.PLAYING)
+        {
+            FlyFlapMusicInst = RuntimeManager.CreateInstance(FlyFlapMusicReference);
 
-    public void SetBuzzParameter()
-    {
-        FlyFlapBuzzInst.setParameterByName("FlappyFlyPitchShifter", 1, false);
+            FlyFlapBuzzInst = RuntimeManager.CreateInstance(FlyFlapBuzzReference);
+
+            FlyFlapMusicInst.start();
+            Debug.Log("FlyMusic START");
+
+            FlyFlapBuzzInst.start();
+            Debug.Log("FlyBuzz START");
+        }
     }
 
     public void StopFlyFlap()
     {
-        FlyFlapMusicInst.release();
         FlyFlapMusicInst.stop(STOP_MODE.IMMEDIATE);
         FlyFlapBuzzInst.release();
+        Debug.Log("FlyMusic STOP");
+
         FlyFlapBuzzInst.stop(STOP_MODE.IMMEDIATE);
-        RuntimeManager.PlayOneShot(FlyFlapDeathReference);
+        FlyFlapMusicInst.release();
+        Debug.Log("FlyBuzz STOP");
+
     }
+    public void SetBuzzParameter()
+    {
+        FlyFlapBuzzInst.setParameterByName("FlappyFlyPitchShifter", 1, false);
+    }
+    
     
     public void PlayFliesMusic()
     {
+        //FLiesMusic is 3D shooter music
+
         fliesMusicInst = RuntimeManager.CreateInstance(FliesMusic);
         fliesMusicInst.start();
+        Debug.Log("Flies Music START 2");
     }
-
+    public void StopFliesMusic()
+    {
+        fliesMusicInst.release();
+        fliesMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
+        Debug.Log("Flies Music STOP");
+    }
     public void PlayDoodleMusic()
     {
         DoodleJumpInst = RuntimeManager.CreateInstance(DoodleJumpRef);
         DoodleJumpInst.start();
+        Debug.Log("Doodle Music START");
     }
     
     public void StopDoodleMusic()
     {
         DoodleJumpInst.release();
         DoodleJumpInst.stop(STOP_MODE.IMMEDIATE);
+        Debug.Log("Doodle Music STOP");
     }
-    
-    public void StopFliesMusic()
-    {
-        fliesMusicInst.release();
-        fliesMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
-    }
+   
 
     public void PlayPongMusic()
     {
         pongMusicInst = RuntimeManager.CreateInstance(PongMusic);
         pongMusicInst.start();
+        Debug.Log("Pong Music START");
     }
 
     public void StopPongMusic()
     {
         pongMusicInst.release();
         pongMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
+        Debug.Log("Pong Music STOP");
     }
 
     public void PlayVindosMusic()
@@ -154,6 +176,7 @@ public class MusicManager : MonoBehaviour
         {
             vindowsMusicInst = RuntimeManager.CreateInstance(VindosMusic);
             vindowsMusicInst.start();
+            Debug.Log("Vindos Music START");
         }
         
     }
@@ -162,5 +185,7 @@ public class MusicManager : MonoBehaviour
     {
         vindowsMusicInst.release();
         vindowsMusicInst.stop(STOP_MODE.ALLOWFADEOUT);
+        Debug.Log("Vindos Music STOP");
+
     }
 }

@@ -1367,46 +1367,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoCoin.Path
-      value: event:/DinoGame/DinoJump
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoJump.Path
-      value: event:/DinoGame/DinoJump
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoCoin.Guid.Data1
-      value: -1695815051
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoCoin.Guid.Data2
-      value: 1153529268
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoCoin.Guid.Data3
-      value: 1688968361
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoCoin.Guid.Data4
-      value: 1641619959
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoJump.Guid.Data1
-      value: -1695815051
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoJump.Guid.Data2
-      value: 1153529268
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoJump.Guid.Data3
-      value: 1688968361
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
-      propertyPath: dinoJump.Guid.Data4
-      value: 1641619959
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da690c947380b45804348e5ba40511, type: 3}
 --- !u!114 &403343354 stripped

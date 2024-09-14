@@ -1153,6 +1153,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &738570436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
+  m_PrefabInstance: {fileID: 453480005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ebd52b2332a6c40b98bcbe9acf0d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &780161948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1410,22 @@ PrefabInstance:
     - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
       propertyPath: dinoJump.Guid.Data4
       value: 1641619959
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data1
+      value: 1019763645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data2
+      value: 1078424246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data3
+      value: -222470746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804358829096589063, guid: 90da690c947380b45804348e5ba40511, type: 3}
+      propertyPath: SolvedRiddleShort.Guid.Data4
+      value: -718274903
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da690c947380b45804348e5ba40511, type: 3}
@@ -2000,6 +2027,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2124114935}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 738570436}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: PlayVindosMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -45,6 +45,8 @@ public class LightSwitch : MonoBehaviour
         {
             EnableCircuitPart();
             transform.parent.GetComponent<LightSwitchPlateAnimationController>().Open();
+            SoundManager.Instance.SolvedRiddleAction?.Invoke();
+            Debug.Log("Riddle solved");
         }
     }
 

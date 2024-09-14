@@ -22,5 +22,6 @@ public class GlitchFly2 : MonoBehaviour
     private void Stop()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 }

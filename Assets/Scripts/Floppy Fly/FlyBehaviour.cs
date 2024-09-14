@@ -23,6 +23,8 @@ public class FlyBehaviour : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = Vector2.zero;
         stop = false;
+
+        MusicManager.Instance.FlyFlapAction?.Invoke();
     }
 
 
@@ -61,6 +63,7 @@ public class FlyBehaviour : MonoBehaviour
             Stop();
             FlyManager.flyEnd?.Invoke();
             MusicManager.Instance.StopFlyFlap();
+            SoundManager.Instance.FlySplatAction?.Invoke();
         }
     }
     

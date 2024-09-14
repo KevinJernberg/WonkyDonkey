@@ -6504,26 +6504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: PongMusic.Path
-      value: event:/OminusPong/PongAmbiance
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: PongMusic.Guid.Data1
-      value: -1570762854
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: PongMusic.Guid.Data2
-      value: 1118443386
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: PongMusic.Guid.Data3
-      value: -938244725
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112154767395889030, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
-      propertyPath: PongMusic.Guid.Data4
-      value: 427911663
-      objectReference: {fileID: 0}
     - target: {fileID: 1112154767395889031, guid: 398f0c682fbd5cb4e839c92025289859, type: 3}
       propertyPath: m_RootOrder
       value: 19

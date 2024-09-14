@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
        if (transform.position.y >= 115f)
        {
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           MusicManager.Instance.StopDoodleMusic();
        }
     }
 

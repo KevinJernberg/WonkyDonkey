@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public void Awake()
     {
-        MusicManager.Instance.VindowsMusicAction?.Invoke();
-        Debug.Log("Instnace creted");
+        //MusicManager.Instance.VindowsMusicAction?.Invoke();
+        //Debug.Log("VindowsMusicStarted");
     }
 
     public void PlayGame()

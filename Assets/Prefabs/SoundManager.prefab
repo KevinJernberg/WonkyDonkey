@@ -49,6 +49,13 @@ MonoBehaviour:
   KlickSound: []
   Pong: []
   VoiceLines: []
+  FlySplatReference:
+    Guid:
+      Data1: 971604845
+      Data2: 1234177364
+      Data3: 669959604
+      Data4: -1479193238
+    Path: event:/FlappyFly/FlappyFlyDeathstinger
   paperPickUpReference:
     Guid:
       Data1: -532264569
@@ -76,14 +83,14 @@ MonoBehaviour:
       Data2: 1294566388
       Data3: -1416548221
       Data4: 1838354640
-    Path: event:/3DShooter/Flies/FlyAttack1
+    Path: event:/Flies/FlyAttack1
   fliesEnemieEventDeathReference:
     Guid:
       Data1: -1065020562
       Data2: 1078370372
       Data3: 742545800
       Data4: 1475269857
-    Path: event:/3DShooter/Flies/FlyDeathStinger
+    Path: event:/Flies/FlyDeathStinger
   PongBallReference:
     Guid:
       Data1: -1536085067
@@ -114,10 +121,10 @@ MonoBehaviour:
     Path: event:/Lightswitch + Wires/SolvedRiddle
   SolvedRiddleShort:
     Guid:
-      Data1: -2007174780
-      Data2: 1319266457
-      Data3: -2141517437
-      Data4: -532274951
+      Data1: 1019763645
+      Data2: 1078424246
+      Data3: -222470746
+      Data4: -718274903
     Path: event:/Lightswitch + Wires/SolvedRiddleShort
   lightFlick:
     Guid:
@@ -142,8 +149,15 @@ MonoBehaviour:
     Path: event:/DinoGame/DinoJump
   dinoCoin:
     Guid:
-      Data1: -530790730
-      Data2: 1213051181
-      Data3: 248174228
-      Data4: 1041559523
-    Path: event:/DinoGame/DinoCoinPickUp
+      Data1: -1695815051
+      Data2: 1153529268
+      Data3: 1688968361
+      Data4: 1641619959
+    Path: event:/DinoGame/DinoJump
+  DoodleJumpsReference:
+    Guid:
+      Data1: 1851133810
+      Data2: 1316978838
+      Data3: 137237123
+      Data4: 654795128
+    Path: event:/DoodleGame/DoodleJump1

@@ -44,7 +44,11 @@ public class SoundManager : MonoBehaviour
     public List<EventReference> VoiceLines = new List<EventReference>();
 
     public EventInstance instFliest;
-    
+
+
+    [Header("FlapyFly")]
+    [SerializeField] private EventReference FlySplatReference;
+    public UnityAction FlySplatAction;
 
     [Header("Paper")]
     [SerializeField] private EventReference paperPickUpReference;
@@ -79,6 +83,7 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField] private EventReference SolvedRiddle;
     public UnityAction SolvedRiddleAction;
+
     [SerializeField] private EventReference SolvedRiddleShort;
     public UnityAction SolvedRiddleActionShort;
     
@@ -94,13 +99,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private EventReference dinoCoin;
     public UnityAction DinoCoinAction;
 
+    [Header("Doodle Jump")]
+    [SerializeField] private EventReference DoodleJumpsReference;
+    public UnityAction DoodleJumpAction;
 
     //[Header("FlappyFly")]
     //[SerializeField] private EventReference FlyFlapReference;
-   // public UnityAction FlyFlapAction;
-    
+    // public UnityAction FlyFlapAction;
+
     private void OnEnable()
     {
+        FlySplatAction += FlySplat;
         PaperPickUpAction += PaperPickUp;
         paperPutDownAction += PaperPutDownAction; 
         //fliesEnemiesEventAttackAction += FliesEnemieEventAttack;
@@ -113,11 +122,13 @@ public class SoundManager : MonoBehaviour
        PaperBinAction += playPaper;
        DinoJumpAction += DinoJump;
        DinoCoinAction += DinoCoin;
+       DoodleJumpAction += PlayDoodleJumpSound;
 
 
     }
     private void OnDisable()
     {
+        FlySplatAction -= FlySplat;
         PaperPickUpAction -= PaperPickUp;
         paperPutDownAction -= PaperPutDownAction;
         //fliesEnemiesEventAttackAction -= FliesEnemiesDeath;
@@ -134,57 +145,88 @@ public class SoundManager : MonoBehaviour
     }
 
     
-    
+    public void FlySplat()
+    {
+        RuntimeManager.PlayOneShot(FlySplatReference);
+        Debug.Log("Fly Splat");
+    }
     private void PlayPhatError()
     {
         RuntimeManager.PlayOneShot(PhatError);
+        Debug.Log("PhateError OneShot Played");
     }
     public void PlayKlick()
     {
         RuntimeManager.PlayOneShot(klickReference);
-        Debug.Log("Klick");
+        Debug.Log("Klick OneShot Played");
     }
 
     public void PlayRiddleSolved()
     {
         RuntimeManager.PlayOneShot(SolvedRiddle);
+        Debug.Log("SolvedRiddle OneShot Played");
     }
 
     public void playPaper()
     {
         RuntimeManager.PlayOneShot(PaperBin);
+        Debug.Log("PaperBin OneShot Played");
     }
 
     public void DinoJump()
     {
         RuntimeManager.PlayOneShot(dinoJump);
+        Debug.Log("DinoJump OneShot Played");
     }
 
     public void DinoCoin()
     {
         RuntimeManager.PlayOneShot(dinoCoin);
+        Debug.Log("DinoCoin OneShot Played");
     }
 
     private void PlayRiddleSolvedShort()
     {
         RuntimeManager.PlayOneShot(SolvedRiddleShort);
+        Debug.Log("SolvedRiddleShrt OneShot Played");
     }
 
     private void PlayLightFlick()
     {
         RuntimeManager.PlayOneShot(lightFlick);
+        Debug.Log("LightFlck OneShot Played");
     }
     
     private void PaperPickUp()
     {
         RuntimeManager.PlayOneShot(paperPickUpReference);
+        Debug.Log("PaperPickUp OneShot Played");
     }
 
     private void PaperPutDownAction()
     {
         RuntimeManager.PlayOneShot(paperPutDownReference);
+        Debug.Log("PaperPutdwn OneShot Played");
     }
 
+    public void PlayBallHit()
+    {
+        RuntimeManager.PlayOneShot(PongBallReference);
+        Debug.Log("BallHiit OneShot Played");
+    }
+
+    public void PlayPongSwoosh()
+    {
+        RuntimeManager.PlayOneShot(PongSwooshReference);
+        Debug.Log("PongSwhoos");
+    }
+
+    public void PlayDoodleJumpSound()
+    {
+
+        RuntimeManager.PlayOneShot(DoodleJumpsReference);
+        Debug.Log("DoodleJump");
+    }
     public void FliesEnemieEventAttack(GameObject flieObject)
     {
         flieAttackInst = RuntimeManager.CreateInstance(fliesEnemieEventAttackReference);
@@ -199,16 +241,4 @@ public class SoundManager : MonoBehaviour
         RuntimeManager.PlayOneShotAttached(fliesEnemieEventDeathReference, flieObject);
     }
 
-    public void PlayBallHit()
-    {
-        RuntimeManager.PlayOneShot(PongBallReference);
-    }
-
-    public void PlayPongSwoosh()
-    {
-        RuntimeManager.PlayOneShot(PongSwooshReference);
-    }
-
-    
-    
 }

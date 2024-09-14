@@ -58,6 +58,7 @@ public class ErrorCursor : MonoBehaviour
             if (cycleTimer <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //MusicManager.Instance.StopFlyFlap();
             }
         }
     }

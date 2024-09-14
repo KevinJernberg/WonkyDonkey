@@ -16,11 +16,10 @@ public class FlyManager : MonoBehaviour
     
     private void Awake()
     {
-        if (MusicManager.Instance != null)
-        {
-         
+       if (MusicManager.Instance != null)
+       {
             MusicManager.Instance.StopVindosMusic();
-            MusicManager.Instance.PlayFlyFlap();       
+
         }
     }
     private void Update()
